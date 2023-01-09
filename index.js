@@ -8,9 +8,11 @@ const router = require('./app/router');
 
 // un peu de config
 const PORT = process.env.PORT || 5000;
-
-
 const app = express();
+
+// Set-up des views 
+app.set('views', './app/views');
+app.set('view engine', 'ejs');
 
 // servir les fichiers statiques qui sont dans "integration"
 app.use(express.static('integration'));
