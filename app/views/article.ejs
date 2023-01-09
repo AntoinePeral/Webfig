@@ -25,7 +25,7 @@
                   </p>
                   <h5>$<%= figurine.price%></h5>
                   <p class="card-text">
-                    <a href="#" class="link-add-bookmarks">+ Ajouter aux favoris</a>
+                    <a href="/bookmarks/add/<%= figurine.id%>" class="link-add-bookmarks">+ Ajouter aux favoris</a>
                   </p>
               </div>
             </div>
@@ -41,6 +41,42 @@
     </div>
     <!-- /.row -->
 
+
+  </div>
+  <!-- /.container -->
+  
+  <!-- Modale des avis -->
+  <div class="modal fade" id="reviewsModal" tabindex="-1" role="dialog" aria-labelledby="reviewsModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="reviewsModalLabel">Avis des internautes</h3>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <% for (review of reviews ) { %>
+          <section>
+            <h5><%= review.title %>&nbsp; <small class="text-muted">           
+              <% for (let index = 0; index < review.note; index++) { %>
+              &#9733;
+           <% } %>
+               </small></h5>
+            <p class="review-author"><%=review.author%></p>
+            <p><%=review.message%></p>
+          </section>
+  
+          <% } %>
+  
+            
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+        </div>
+      </div>
+    </div>
+  </div>
  
 
   <!-- Footer -->

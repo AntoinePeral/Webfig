@@ -10,7 +10,6 @@ const bookmarksController = {
     response.render('favoris', {listbookmarks});
     return listbookmarks;
   },
-
   addBookmarks: async (request, response) =>{
     const targetId = parseInt(request.params.id);  
 
@@ -19,7 +18,7 @@ const bookmarksController = {
     if (!listbookmarks){
       listbookmarks= [];
     }
-  
+
     if(listbookmarks.find(figurine => figurine.id === targetId) ){
       return;
     } 

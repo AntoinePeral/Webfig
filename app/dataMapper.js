@@ -20,6 +20,16 @@ const dataMapper = {
             return result.rows[0];
         }
     },
+    getAllReview: async(figurineId) =>{
+        const sqlQuery = `SELECT * FROM "review" WHERE "figurine_id"=${figurineId}`;
+        const result = await client.query(sqlQuery);
+        if (result.rows.length === 0){
+            return null
+        }
+        else {
+            return result.rows;
+        }
+    }
 }
 
   
