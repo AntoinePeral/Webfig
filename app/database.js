@@ -2,7 +2,12 @@
 const pg = require('pg');
 
 // 2. Créer un client
-const client = new pg.Client(process.env.PG_URL);
+const client = new pg.Client({
+    host: process.env.PGHOST,
+    user: process.env.PGUSER,
+    password: process.env.PGPASSWORD,
+    database: process.env.PGDATABASE
+});
 
 // 3. Connecter le client
 client.connect();
