@@ -60,9 +60,12 @@
           <section>
             <h5><%= review.title %>&nbsp; <small class="text-muted">           
               <% for (let index = 0; index < review.note; index++) { %>
-              &#9733;
-           <% } %>
-               </small></h5>
+                &#9733;
+              <% } %>
+              <% for (let index = review.note; index < 5; index++) { %>
+                &#9734;
+              <% } %>
+             </small></h5>
             <p class="review-author"><%=review.author%></p>
             <p><%=review.message%></p>
           </section>
